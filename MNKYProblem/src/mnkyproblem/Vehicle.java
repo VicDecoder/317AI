@@ -10,5 +10,7 @@ package mnkyproblem;
  * @author victor
  */
 public class Vehicle {
+
+
     
 }
