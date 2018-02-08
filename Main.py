@@ -75,6 +75,8 @@ class State:
         self.vehicle = Locations.setY(var)
     def getString(self):
         print('v', self.vehicle.getX())
+        print('p',self.package.getX())
+        
 
 
 class Problem:
@@ -96,11 +98,13 @@ class Problem:
             surj.setCarry(False)
             surj.package.setX(state.package.getDest())
             queue.Queue.put(surj)
+            surj.getString()
 
         if(state.vehicle.getX() == state.package.getDest() and state.getCarry() == False):
             lar = state
             lar.vehicle.setX(0)
             queue.Queue.put(lar)
+            lar.getString()
 
 
 
@@ -113,11 +117,12 @@ carry = False
 p = Package(1,2)
 v = Vehicle()
 a = State(v,p,carry)
+print("The initial state is: ",a.getString())
 s = Problem(a)
 
 
 
-print(s.successor(a))
+s.successor(a)
 
 
 
