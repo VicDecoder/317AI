@@ -10,5 +10,30 @@ package mnkyproblem;
  * @author victor
  */
 public class Location {
-    
+    float x;
+    float y;
+    public Location(){
+        x =0;
+        y =0;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+    public float getY(){
+        return y;
+    }
+    public void setY(float y){
+        this.y = y;
+    }
+    public float[] getLocation(){
+        float[] tmp=new float[2];
+        tmp[0]=this.x;
+        tmp[1]=this.y;
+        return tmp;
+    }
 }
