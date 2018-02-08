@@ -5,20 +5,24 @@
  */
 package mnkyproblem;
 
+import java.util.LinkedList;
+
+
 /**
  *
  * @author victor
  */
 public class Vehicle extends Location{
-    private Package thePackage;
+    private LinkedList<Package> thePackages;
      public Vehicle(){
-        thePackage=null;
+        thePackages=new LinkedList<>();
      }
-     public void addPackage(Packager p){
-         thePackage=p;
+     public void addPackage(Package p){
+         thePackages.add(p);
      }
-     public void removePackage(){
-         thePackage=null;
+     public void removePackage(Package p){
+         thePackages.remove(p);
+
      }
 
 }
