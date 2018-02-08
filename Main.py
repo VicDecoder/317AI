@@ -36,6 +36,7 @@ class Package(Locations):
     #key = None
     def __init__(self, p, d):
         self.pos = p
+    	self.setX(self.pos)
         self.dest = d
         #self.key = k
 
@@ -73,38 +74,62 @@ class State:
         self.package=Locations.setY(var)
     def setVehicleLocation(self,var):
         self.vehicle = Locations.setY(var)
-    def getString(self):
+    def __str__(self):
         print('v', self.vehicle.getX())
         print('p',self.package.getX())
-        
+        print ('C',self.getCarry())
+
+
 
 
 class Problem:
     state = None
+    queue=None
 
 
 
     def __init__(self,s):
         self.state  = s
+        self.queue=[]
     def successor(self,state):
         if(state.vehicle.getX() == 0 and state.getCarry() == False and state.package.getX() == state.package.getPost()):
-            victor = state
+            victor = State(state.getVehicle(),state.getPackages(),state.getCarry())
             victor.setCarry(True)
             victor.vehicle.setX(state.package.getPost())
-            queue.Queue.put(victor)
-            victor.getString()
+
+            victor.__str__()
+            self.successor(victor)
+            self.queue.append(victor)
         if(state.vehicle.getX() == state.package.getPost() and state.getCarry() == True):
-            surj = state
+            surj =  State(state.getVehicle(),state.getPackages(),state.getCarry())
             surj.setCarry(False)
+            surj.vehicle.setX(state.package.getDest())
             surj.package.setX(state.package.getDest())
-            queue.Queue.put(surj)
-            surj.getString()
+            self.queue.append(surj)
+            surj.__str__()
+            self.successor(surj)
 
         if(state.vehicle.getX() == state.package.getDest() and state.getCarry() == False):
-            lar = state
+            lar =  State(state.getVehicle(),state.getPackages(),state.getCarry())
             lar.vehicle.setX(0)
-            queue.Queue.put(lar)
-            lar.getString()
+
+            self.queue.append(lar)
+            lar.__str__()
+            self.successor(lar)
+
+    def getQueue(self):
+        return self.queue
+    def printQueue(self):
+        print (self.queue)
+
+    def isGoal(self,state):
+        if(state.vehicle.getX()==0 and state.package.getX()==state.package.getDest()and state.getCarry()==False):
+            return True
+        return False
+class Search:
+    queue=None
+    def __init__(self,queue):
+        queue
 
 
 
@@ -116,13 +141,15 @@ class Problem:
 carry = False
 p = Package(1,2)
 v = Vehicle()
-a = State(v,p,carry)
-print("The initial state is: ",a.getString())
-s = Problem(a)
+init_state = State(v,p,carry)
+v.setX(0)
+print "The initial state is: "
+print(init_state.__str__())
+s = Problem(init_state)
+s.successor(init_state)
 
 
 
-s.successor(a)
 
 
 
