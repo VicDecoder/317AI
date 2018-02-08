@@ -12,7 +12,13 @@ package mnkyproblem;
 public class Vehicle extends Location{
     private Package thePackage;
      public Vehicle(){
-
+        thePackage=null;
+     }
+     public void addPackage(Packager p){
+         thePackage=p;
+     }
+     public void removePackage(){
+         thePackage=null;
      }
 
 }
