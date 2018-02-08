@@ -12,6 +12,7 @@ import java.util.LinkedList;
  *
  * @author victor
  */
+
 public class Vehicle extends Location{
     private LinkedList<Package> thePackages;
      public Vehicle(){
@@ -26,3 +27,6 @@ public class Vehicle extends Location{
      }
 
 }
+
+
+
