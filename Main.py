@@ -75,9 +75,11 @@ class State:
     def setVehicleLocation(self,var):
         self.vehicle = Locations.setY(var)
     def __str__(self):
-        print('v', self.vehicle.getX())
-        print('p',self.package.getX())
-        print ('C',self.getCarry())
+        word="v= {self.vehicle.getX()}"
+        word=word+" p= {self.package.getX()}"
+        word=word+" c={self.getCarry()}"
+        return word
+    
 
 
 
@@ -117,6 +119,7 @@ class Problem:
             lar.__str__()
             self.successor(lar)
 
+
     def getQueue(self):
         return self.queue
     def printQueue(self):
@@ -126,10 +129,36 @@ class Problem:
         if(state.vehicle.getX()==0 and state.package.getX()==state.package.getDest()and state.getCarry()==False):
             return True
         return False
+    def search(self,state):
+        value = True
+        while value:
+            self.queue.pop()
+
+
 class Search:
-    queue=None
-    def __init__(self,queue):
-        queue
+
+
+    def search(self,problem,state):
+        queue=[]
+        queue.append(init_state)
+
+        while len(queue)>=0:
+            here=queue.pop()
+            if problem.isGoal(here):
+                print(here)
+            else:
+                problem.successor(here)
+                next=problem.getQueue()
+                for s in next:
+                    queue.append(s)
+        return "The stuff didnt work"
+
+
+
+
+
+
+
 
 
 
@@ -145,20 +174,8 @@ init_state = State(v,p,carry)
 v.setX(0)
 print "The initial state is: "
 print(init_state.__str__())
-s = Problem(init_state)
-s.successor(init_state)
+prob = Problem(init_state)
+prob.successor(init_state)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+test = Search()
+test.search(prob, init_state)
