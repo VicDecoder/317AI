@@ -1,11 +1,16 @@
+try:
+    import queue
+except ImportError:
+    import Queue as queue
+
 class Locations:
     x =0
     y = 0
     def __init__(self):
         self
-    def getX(self,x):
+    def getX(self):
         return self.x
-    def getY(self,y):
+    def getY(self):
         return self.y
     def setX(self,var):
         self.x =var
@@ -28,11 +33,11 @@ class Vehicle(Locations):
 class Package(Locations):
     pos = None
     dest = None
-    key = None
-    def __init__(self, p, d, k):
+    #key = None
+    def __init__(self, p, d):
         self.pos = p
         self.dest = d
-        self.key = k
+        #self.key = k
 
     def getPost(self):
         return self.pos
@@ -40,8 +45,8 @@ class Package(Locations):
     def getDest(self):
         return self.dest
 
-    def getKey(self):
-        return self.key
+    #def getKey(self):
+         #return self.key
 
 
 class State:
@@ -68,9 +73,55 @@ class State:
         self.package=Locations.setY(var)
     def setVehicleLocation(self,var):
         self.vehicle = Locations.setY(var)
+    def getString(self):
+        print('v', self.vehicle.getX())
+
 
 class Problem:
-    state
+    state = None
+
+
+
+    def __init__(self,s):
+        self.state  = s
+    def successor(self,state):
+        if(state.vehicle.getX() == 0 and state.getCarry() == False and state.package.getX() == state.package.getPost()):
+            victor = state
+            victor.setCarry(True)
+            victor.vehicle.setX(state.package.getPost())
+            queue.Queue.put(victor)
+            victor.getString()
+        if(state.vehicle.getX() == state.package.getPost() and state.getCarry() == True):
+            surj = state
+            surj.setCarry(False)
+            surj.package.setX(state.package.getDest())
+            queue.Queue.put(surj)
+
+        if(state.vehicle.getX() == state.package.getDest() and state.getCarry() == False):
+            lar = state
+            lar.vehicle.setX(0)
+            queue.Queue.put(lar)
+
+
+
+
+
+
+
+
+carry = False
+p = Package(1,2)
+v = Vehicle()
+a = State(v,p,carry)
+s = Problem(a)
+
+
+
+print(s.successor(a))
+
+
+
+
 
 
 
