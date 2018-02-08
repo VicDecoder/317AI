@@ -5,6 +5,8 @@
  */
 package mnkyproblem;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author victor
@@ -12,7 +14,6 @@ package mnkyproblem;
 public class Package extends Location{
     float post = 0;
     float dest = 0;
-
     public Package(float p, float d){
         post = p;
         setX(post);
@@ -24,4 +25,6 @@ public class Package extends Location{
     public float getDest(){
         return dest;
     }
+
+
 }

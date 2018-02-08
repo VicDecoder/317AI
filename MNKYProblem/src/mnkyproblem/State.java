@@ -9,29 +9,29 @@ package mnkyproblem;
  *
  * @author victor
  */
-public class State {
+public class State{
 
-    Vehicle v;
-    Package p;
+    Vehicle veh;
+    Package pac;
     boolean carry;
 
     public State(Vehicle v, Package p, boolean input)
     {
-        v.x = 0.0;
-        v.y = 0.0;
+        veh = v;
+        pac = p;
         carry = input;
     }
 
 
     public Vehicle getVehicle()
     {
-        return this.v;
+        return this.veh;
 
     }
 
     public Package getPackage()
     {
-        return this.p;
+        return this.pac;
     }
 
 
@@ -42,16 +42,16 @@ public class State {
     }
 
 
-    public void setVehicle(float x)
+    public void setVehicleLocation(float x)
     {
-        this.v.x = x;
+        this.veh.setX(x);
 
     }
 
 
-    public void setPackage(float x)
+    public void setPackageLocation(float x)
     {
-        this.p.x = x;
+        this.pac.setX(x);
 
     }
 
