@@ -19,17 +19,7 @@ class Locations:
     def getLocation(self):
         return [self.x,self.y]
 
-class Vehicle(Locations):
-    packages = None
-    def __init__(self):
-        self.packages = []
-
-    def addPackage(self, p):
-        self.packages.append(p)
-
-    def removePackage(self, p):
-        self.package.pop(p.getKey())
-
+cgit
 class Package(Locations):
     pos = None
     dest = None

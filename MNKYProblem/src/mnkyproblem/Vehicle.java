@@ -9,6 +9,10 @@ package mnkyproblem;
  *
  * @author victor
  */
-public class Vehicle {
-    
+public class Vehicle extends Location{
+    private Package thePackage;
+     public Vehicle(){
+
+     }
+
 }
