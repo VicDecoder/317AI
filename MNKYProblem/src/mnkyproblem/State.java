@@ -61,4 +61,12 @@ public class State{
         this.carry = input;
 
     }
+    public String toString(){
+        String str;
+        str="V="+veh.getX();
+        str=str+"\nP="+pac.getX();
+        str=str+"\nC="+carry;
+        str=str+"\n";
+        return str;
+    }
 }
