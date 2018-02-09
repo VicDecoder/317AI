@@ -10,5 +10,8 @@ package mnkyproblem;
  * @author victor
  */
 public class Problem2 {
+    public void successor(){
+        
+    }
     
 }
