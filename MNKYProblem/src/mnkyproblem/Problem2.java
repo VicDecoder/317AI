@@ -5,12 +5,26 @@
  */
 package mnkyproblem;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author victor
  */
 public class Problem2 {
-    public void successor(){
+    private State initState;
+    private State goalState;
+    private LinkedList<State> stateList;
+    
+    public Problem2(State s,State goal){
+        initState=s;
+        goalState=goal;
+        stateList=new LinkedList<>();
+    }
+    public void successor(State s){
+        if(){
+            
+        }
         
     }
     

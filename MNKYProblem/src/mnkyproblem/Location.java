@@ -38,6 +38,14 @@ public class Location {
         this.x=a;
         this.y=b;
     }
+    public boolean compare(Location l){
+        if(this.x==l.getX()){
+            if(this.y==l.getY()){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public float[] getLocation(){
         float[] tmp=new float[2];
