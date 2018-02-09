@@ -34,6 +34,10 @@ public class Location {
     public void setY(float y){
         this.y = y;
     }
+    public void setLocation(float a, float b){
+        this.x=a;
+        this.y=b;
+    }
 
     public float[] getLocation(){
         float[] tmp=new float[2];
