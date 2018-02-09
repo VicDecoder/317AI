@@ -22,7 +22,7 @@ public class Problem {
     }
     public void successor(State state){
         if((state.veh.getX()==0)&&(state.getCarry()==false)&&(state.getPackage().getX()==state.getPackage().getPost())){
-           System.out.println("1");
+            System.out.println("1");
             State victor=new State(state.getVehicle(),state.getPackage(),state.getCarry());
             victor.getVehicle().setX(state.getPackage().getPost());
             System.out.println(victor);
@@ -50,11 +50,12 @@ public class Problem {
             //this.successor(lar);
             
         }
-        if(state.getVehicle().getX() ==2 &&(state.getCarry() == true)&& state.getVehicle().getX()!=goalState.getVehicle().getX()){
+        if(state.getVehicle().getX()==2 &&(state.getCarry() == true)&& state.getVehicle().getX()!=goalState.getVehicle().getX()){
             System.out.println("3");
             State lar=new State(state.getVehicle(),state.getPackage(),state.getCarry());
             lar.getVehicle().setX(goalState.getVehicle().getX());
             lar.getPackage().setX(goalState.getPackage().getX());
+            lar.setCarry(false);
             this.stateList.add(lar);
             System.out.println(lar);
             //this.successor(lar);
