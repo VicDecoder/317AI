@@ -23,7 +23,10 @@ public class MNKYProblem {
     Vehicle f=new Vehicle();
     State init_state = new State(v,p,carry);
     v.setX(0);
-    State goal=new State(v,pack,carry);
+    f.setX(0);
+    pack.setX(2);
+    
+    State goal=new State(f,pack,carry);
 
     System.out.println( "The initial state is: ");
     System.out.print(init_state);
