@@ -78,7 +78,7 @@ public class Problem {
     public boolean isGoal(State tmp){
         if(tmp.getVehicle().getX()==goalState.getVehicle().getX()){
             if(tmp.getPackage().getX()==goalState.getPackage().getX()){
-                if(tmp.getCarry()==tmp.getCarry()){
+                if(tmp.getCarry()==goalState.getCarry()){
             return true;
                 }
             }

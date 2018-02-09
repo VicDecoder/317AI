@@ -26,7 +26,7 @@ public class MNKYProblem {
     f.setX(0);
     pack.setX(2);
     
-    State goal=new State(f,pack,carry);
+    State goal=new State(f,pack,false);
 
     System.out.println( "The initial state is: ");
     System.out.print(init_state);
