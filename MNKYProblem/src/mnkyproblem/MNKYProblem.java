@@ -34,7 +34,7 @@ public class MNKYProblem {
     prob.successor(init_state);
 
     Search test = new Search();
-    System.out.println(test.search(prob, init_state));
+    test.search(prob, init_state);
     }
     
 }

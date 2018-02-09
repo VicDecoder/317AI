@@ -22,33 +22,56 @@ public class Problem {
     }
     public void successor(State state){
         if((state.veh.getX()==0)&&(state.getCarry()==false)&&(state.getPackage().getX()==state.getPackage().getPost())){
+           System.out.println("1");
             State victor=new State(state.getVehicle(),state.getPackage(),state.getCarry());
-            victor.setCarry(true);
             victor.getVehicle().setX(state.getPackage().getPost());
             System.out.println(victor);
             this.stateList.add(victor);
             //this.successor(victor);
            
         }
-        if((state.getVehicle().getX() == state.getPackage().getPost()) &&( state.getCarry() == true)){
+        if((state.getVehicle().getX() == state.getPackage().getPost()) &&( state.getCarry() == false)&&state.getVehicle().getX()!=goalState.getVehicle().getX()){
+            System.out.println("2");
             State surj=new State(state.getVehicle(),state.getPackage(),state.getCarry());
-            surj.setCarry(false);
-            surj.getVehicle().setX(goalState.getPackage().getX());
-            surj.getPackage().setX(goalState.getPackage().getX());
+            surj.setCarry(true);
+            
             System.out.println(surj);
             this.stateList.add(surj);
             //this.successor(surj);
             
         }
-        if(state.getVehicle().getX() == goalState.getPackage().getX() &&(state.getCarry() == false)){
+        if(state.getVehicle().getX() == state.getPackage().getX() &&(state.getCarry() == true)&& state.getVehicle().getX()!=goalState.getVehicle().getX()){
+            System.out.println("3");
             State lar=new State(state.getVehicle(),state.getPackage(),state.getCarry());
-            
-            lar.getVehicle().setX(0);
-            lar.getVehicle().setX(state.getPackage().getPost());
+            lar.getVehicle().setX(goalState.getPackage().getX());
+            lar.getPackage().setX(goalState.getPackage().getX());
             this.stateList.add(lar);
             System.out.println(lar);
             //this.successor(lar);
             
+        }
+        if(state.getVehicle().getX() ==2 &&(state.getCarry() == true)&& state.getVehicle().getX()!=goalState.getVehicle().getX()){
+            System.out.println("3");
+            State lar=new State(state.getVehicle(),state.getPackage(),state.getCarry());
+            lar.getVehicle().setX(goalState.getVehicle().getX());
+            lar.getPackage().setX(goalState.getPackage().getX());
+            this.stateList.add(lar);
+            System.out.println(lar);
+            //this.successor(lar);
+        }
+        if(state.getVehicle().getX()==goalState.getVehicle().getX()&&state.getCarry()==true){
+            System.out.println("4");
+            State umar=new State(state.getVehicle(),state.getPackage(),state.getCarry());
+            umar.setCarry(false);
+            this.stateList.add(umar);
+            
+        }
+        if(state.getVehicle().getX()==goalState.getVehicle().getX() && state.getCarry()==false){
+            System.out.println("5");
+            state.getVehicle().setX(0);
+            State random=new State(state.getVehicle(),state.getPackage(),state.getCarry());
+            random.setCarry(false);
+            this.stateList.add(random);
         }
         
     }
