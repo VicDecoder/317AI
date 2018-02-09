@@ -9,7 +9,6 @@ package mnkyproblem;
  *
  * @author victor
  */
-public class MKNYMultiple {
-    
+public class Problem2 {
     
 }
