@@ -17,17 +17,21 @@ public class MNKYProblem {
     public static void main(String[] args) {
         // TODO code application logic here
     boolean carry = false;
-    Package p = new Package(1,2);
+    Package p = new Package(1);
+    Package pack=new Package(2);
     Vehicle v = new Vehicle();
+    Vehicle f=new Vehicle();
     State init_state = new State(v,p,carry);
     v.setX(0);
+    State goal=new State(v,pack,carry);
+
     System.out.println( "The initial state is: ");
     System.out.print(init_state);
-    Problem prob = new Problem(init_state);
+    Problem prob = new Problem(init_state,goal);
     prob.successor(init_state);
 
     Search test = new Search();
-    test.search(prob, init_state);
+    System.out.println(test.search(prob, init_state));
     }
     
 }

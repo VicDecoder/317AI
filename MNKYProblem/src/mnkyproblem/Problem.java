@@ -12,10 +12,12 @@ import java.util.LinkedList;
  * @author victor
  */
 public class Problem {
-    private State state;
+    private State initState;
+    private State goalState;
     private LinkedList<State> stateList;
-    public Problem(State s){
-        state=s;
+    public Problem(State s,State goal){
+        initState=s;
+        goalState=goal;
         stateList=new LinkedList<>();
     }
     public void successor(State state){
@@ -25,34 +27,38 @@ public class Problem {
             victor.getVehicle().setX(state.getPackage().getPost());
             System.out.println(victor);
             this.stateList.add(victor);
-            this.successor(victor);
+            //this.successor(victor);
            
         }
         if((state.getVehicle().getX() == state.getPackage().getPost()) &&( state.getCarry() == true)){
             State surj=new State(state.getVehicle(),state.getPackage(),state.getCarry());
             surj.setCarry(false);
-            surj.getVehicle().setX(state.getPackage().getDest());
-            surj.getPackage().setX(state.getPackage().getDest());
+            surj.getVehicle().setX(goalState.getPackage().getX());
+            surj.getPackage().setX(goalState.getPackage().getX());
             System.out.println(surj);
             this.stateList.add(surj);
-            this.successor(surj);
+            //this.successor(surj);
             
         }
-        if(state.getVehicle().getX() == state.getPackage().getDest() &&(state.getCarry() == false)){
+        if(state.getVehicle().getX() == goalState.getPackage().getX() &&(state.getCarry() == false)){
             State lar=new State(state.getVehicle(),state.getPackage(),state.getCarry());
             
             lar.getVehicle().setX(0);
             lar.getVehicle().setX(state.getPackage().getPost());
             this.stateList.add(lar);
             System.out.println(lar);
-            this.successor(lar);
+            //this.successor(lar);
             
         }
         
     }
     public boolean isGoal(State tmp){
-        if(state.getVehicle().getX()==0 && state.getPackage().getX()==state.getPackage().getDest()&& state.getCarry()==false){
+        if(tmp.getVehicle().getX()==goalState.getVehicle().getX()){
+            if(tmp.getPackage().getX()==goalState.getPackage().getX()){
+                if(tmp.getCarry()==tmp.getCarry()){
             return true;
+                }
+            }
         }
         return false;
     }

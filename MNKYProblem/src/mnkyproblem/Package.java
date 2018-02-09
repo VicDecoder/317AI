@@ -13,18 +13,16 @@ import java.util.LinkedList;
  */
 public class Package extends Location{
     float post = 0;
-    float dest = 0;
-    public Package(float p, float d){
+    
+    public Package(float p){
         post = p;
         setX(post);
-        dest = d;
+       
     }
     public float getPost(){
         return post;
     }
-    public float getDest(){
-        return dest;
-    }
+    
 
 
 }
