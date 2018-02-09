@@ -15,8 +15,13 @@ import java.util.LinkedList;
 
 public class Vehicle extends Location{
     private LinkedList<Package> thePackages;
-     public Vehicle(){
+    private float originX;
+    private float originY;
+    
+     public Vehicle(float x, float y){
         thePackages=new LinkedList<>();
+        originX=x;
+        originY=y;
      }
      public void addPackage(Package p){
          thePackages.add(p);
@@ -24,6 +29,16 @@ public class Vehicle extends Location{
      public void removePackage(Package p){
          thePackages.remove(p);
 
+     }
+     public boolean atOrigin(){
+         if(this.x==originX){
+             if(this.y==originY){
+                 return true;
+             }
+             
+         }
+     
+         return false;
      }
 
 }

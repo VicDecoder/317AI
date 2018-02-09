@@ -22,7 +22,7 @@ public class Problem2 {
         stateList=new LinkedList<>();
     }
     public void successor(State s){
-        if(){
+        if(s.getVehicle().atOrigin()&&(s.getPackage().getLocation()==s.getPackage().getPost())){
             
         }
         
