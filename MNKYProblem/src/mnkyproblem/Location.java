@@ -13,6 +13,9 @@ public class Location {
 
     float x;
     float y;
+    float distance;
+    float time;
+
 
     public Location(){
         x =0;

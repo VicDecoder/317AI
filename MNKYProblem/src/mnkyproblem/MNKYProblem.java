@@ -22,9 +22,12 @@ public class MNKYProblem {
     Vehicle v = new Vehicle();
     Vehicle f=new Vehicle();
     State init_state = new State(v,p,carry);
+    Vehicle m = new Vehicle();
+    Package k = new Package(3);
     v.setX(0);
     f.setX(0);
     pack.setX(2);
+
     
     State goal=new State(f,pack,false);
 
