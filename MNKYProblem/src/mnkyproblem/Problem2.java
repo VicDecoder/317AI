@@ -28,7 +28,9 @@ public class Problem2 {
             a.setCarry(true);
             stateList.add(a);
         }
-        if(s.getVehicle().compare(s.getPackage()))
+        if(s.getVehicle().compare(s.getPackage())&&s.carry==true){
+            
+        }
         
     }
     
