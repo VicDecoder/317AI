@@ -13,18 +13,22 @@ import java.util.LinkedList;
  */
 public class Problem2 {
     private State initState;
-    private State goalState;
+    private State goal;
     private LinkedList<State> stateList;
     
-    public Problem2(State s,State goal){
+    public Problem2(State s,State goalState){
         initState=s;
-        goalState=goal;
+        goal=goalState;
         stateList=new LinkedList<>();
     }
     public void successor(State s){
-        if(s.getVehicle().atOrigin()&&(s.getPackage().getLocation()==s.getPackage().getPost())){
-            
+        if(s.getVehicle().atOrigin()&&!(s.getPackage().compare(goal.getPackage()))){
+            State a=new State(s.getVehicle(),s.getPackage(),s.getCarry());
+            a.setVehicleLocation(a.getPackage());
+            a.setCarry(true);
+            stateList.add(a);
         }
+        if(s.getVehicle().compare(s.getPackage()))
         
     }
     

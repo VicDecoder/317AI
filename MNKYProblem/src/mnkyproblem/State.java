@@ -42,9 +42,10 @@ public class State{
     }
 
 
-    public void setVehicleLocation(float x)
+    public void setVehicleLocation(Location l)
     {
-        this.veh.setX(x);
+        
+        this.veh.setLocation(l.getX(), l.getX());
 
     }
 
