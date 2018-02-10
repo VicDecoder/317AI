@@ -31,7 +31,8 @@ public class MNKYProblem {
     prob.successor(init_state);
 
     Search test = new Search();
-    test.search2(prob, init_state);
+    //test.search2(prob, init_state);
+    test.DFS(prob,init_state);
     }
     
 }

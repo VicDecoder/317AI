@@ -7,6 +7,7 @@ package mnkyproblem;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  *
@@ -54,6 +55,26 @@ public State search2(Problem2 prob,State init){
         }
     }
     return init;    
+}
+public State DFS(Problem2 prob, State init){
+    Stack<State> s = new Stack<>();
+    s.add(init);
+    while(!s.isEmpty()){
+        State temp = s.pop();
+        if(prob.isGoal(temp)){
+            System.out.println("The goal is\n" + temp);
+            return temp;
+        }
+        else{
+            prob.successor(temp);
+            LinkedList<State> next = prob.getList();
+            for(State i: next){
+                s.add(i);
+            }
+        }
+    }
+
+    return init;
 }
 
     
