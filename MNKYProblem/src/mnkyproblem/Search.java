@@ -67,10 +67,10 @@ public State DFS(Problem2 prob, State init){
         }
         else{
             prob.successor(temp);
-            LinkedList<State> next = prob.getList();
-            for(State i: next){
-                s.add(i);
-            }
+            //LinkedList<State> next = prob.ge();
+           // for(State i: next){
+             //   s.add(i);
+            //}
         }
     }
 

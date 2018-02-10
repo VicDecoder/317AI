@@ -65,7 +65,7 @@ public class Problem2 {
            a.setVehicleLocation(a.getfirstPackage());
            a.setCarry1(true);
            System.out.println(a);
-           state2List.add(a);
+           
            State2 b=new State2(s.getVehicle(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
            //Im trying to recreate the state creating two stattes where it either goes to the postion of the first package or the secong package
            
@@ -73,6 +73,7 @@ public class Problem2 {
            b.setCarry2(true);
            System.out.println(b);
            state2List.add(b);
+           state2List.add(a);
            
           
            
