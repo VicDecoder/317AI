@@ -26,13 +26,26 @@ public class Problem2 {
             State a=new State(s.getVehicle(),s.getPackage(),s.getCarry());
             a.setVehicleLocation(a.getPackage());
             a.setCarry(true);
+            System.out.println(a);
             stateList.add(a);
         }
         if(s.getVehicle().compare(s.getPackage())&&s.carry==true){
-            
+           State a=new State(s.getVehicle(),s.getPackage(),s.getCarry());
+           a.setVehicleLocation(goal.getPackage());
+           a.setPackageLocation(goal.getPackage());
+           a.setCarry(false);
+           System.out.println(a);
+           stateList.add(a);
         }
-        
+        if(s.getVehicle().compare(goal.getPackage())&&s.getCarry()==false){
+             State a=new State(s.getVehicle(),s.getPackage(),s.getCarry());
+             a.setVehicleLocation(goal.getVehicle());
+             System.out.println(a);
+             stateList.add(a);
+        }
     }
+        
+    
     public float distance(State state1, State state2){
 
         float cos = 0;
@@ -44,4 +57,19 @@ public class Problem2 {
         return distance;
     }
     
+     public boolean isGoal(State tmp){
+        if(tmp.getVehicle().compare(goal.getVehicle())){
+            if(tmp.getPackage().compare(goal.getPackage())){
+                if(tmp.getCarry()==goal.getCarry()){
+                return true;
+                }
+            }
+        }
+        return false;
+    }
+    public LinkedList<State> getList(){
+        return stateList;
+    }
 }
+    
+

@@ -50,9 +50,9 @@ public class State{
     }
 
 
-    public void setPackageLocation(float x)
+    public void setPackageLocation(Location l)
     {
-        this.pac.setX(x);
+        this.pac.setLocation(l.getX(), l.getX());
 
     }
 
@@ -64,8 +64,8 @@ public class State{
     }
     public String toString(){
         String str;
-        str="V="+veh.getX();
-        str=str+"\nP="+pac.getX();
+        str="V=["+veh.getX()+"]["+veh.getY()+"]";
+        str=str+"\nP=["+pac.getX()+"]["+pac.getY()+"]" ;
         str=str+"\nC="+carry;
         str=str+"\n";
         return str;
