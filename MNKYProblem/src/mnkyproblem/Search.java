@@ -56,19 +56,20 @@ public State2 search2(Problem2 prob,State2 init){
     }
     return init;    
 }
-public State DFS(Problem2 prob, State init){
-    Stack<State> s = new Stack<>();
+public State2 DFS(Problem2 prob, State2 init){
+    Stack<State2> s = new Stack<>();
     s.add(init);
     while(!s.isEmpty()){
-        State temp = s.pop();
-        if(prob.isGoal(temp)){
+        State2 temp = s.pop();
+        if(prob.isGoal2(temp)){
             System.out.println("The goal is\n" + temp);
             return temp;
         }
+
         else{
             prob.successor(temp);
-            LinkedList<State> next = prob.getList();
-            for(State i: next){
+            LinkedList<State2> next = prob.getList2();
+            for(State2 i: next){
                 s.add(i);
             }
         }
