@@ -33,6 +33,10 @@ public class MNKYProblem {
     */
     Search test = new Search();
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 6a82b9992a7fea3a9888fe69d13092db7740294a
     
     iPack = new Package(1,1);
     Package iPack2=new Package(2,2);
@@ -50,10 +54,16 @@ public class MNKYProblem {
     pro.successor(init);
 
 
+<<<<<<< HEAD
     test.search2(pro, init);
 
     //test.search2(prob, init_state);
    // test.DFS(prob,init_state);
+=======
+    //test.search2(pro, init);
+    //test.search2(prob, init_state);
+    test.DFS(pro,init);
+>>>>>>> 6a82b9992a7fea3a9888fe69d13092db7740294a
 
     }
     
