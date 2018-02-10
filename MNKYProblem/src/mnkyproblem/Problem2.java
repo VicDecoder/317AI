@@ -33,5 +33,15 @@ public class Problem2 {
         }
         
     }
+    public float distance(State state1, State state2){
+
+        float cos = 0;
+
+        float dis1 = (state1.getVehicle().getX() - state1.getVehicle().getY()) * (state1.getVehicle().getX() - state1.getVehicle().getY());
+       float dis2 = (state2.getVehicle().getX() - state2.getVehicle().getY()) * (state2.getVehicle().getX() - state2.getVehicle().getY());
+        float distance = dis1 + dis2;
+
+        return distance;
+    }
     
 }
