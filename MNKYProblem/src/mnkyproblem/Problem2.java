@@ -27,7 +27,7 @@ public class Problem2 {
         }
         
     }
-    public float cost(State state1, State state2){
+    public float distance(State state1, State state2){
 
         float cos = 0;
 
