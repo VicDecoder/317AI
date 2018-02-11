@@ -81,6 +81,8 @@ public class MNKYProblem {
     //test.search2(prob, init_state);
     //test.DFS(pro,init);
     test.search3(pro, i1);
+    
+   
  
 
 

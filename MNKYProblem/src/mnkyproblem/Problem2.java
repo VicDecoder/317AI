@@ -316,15 +316,15 @@ public class Problem2 {
           
           //The second vehicle goes to first package
           State4 c=new State4(s.v1,s.v2,s.pac1,s.pac2,s.carry1,s.carry2);
-          c.setVehicle1Location(s.pac1);
+          c.setVehicle2Location(s.pac1);
           c.setCarry1(true);
           state4List.add(c);
           System.out.println(c);
           
           //The second vehicle goes to second packaage
           State4 d=new State4(s.v1,s.v2,s.pac1,s.pac2,s.carry1,s.carry2);
-          d.setVehicle1Location(s.pac2);
-          d.setCarry1(true);
+          d.setVehicle2Location(s.pac2);
+          d.setCarry2(true);
           state4List.add(d);
           System.out.println(d);
           
@@ -378,6 +378,7 @@ public class Problem2 {
               
           
       }
+
       if((s.getVehicle2().atOrigin())&&!(s.getVehicle1().atOrigin())){
           
       }
