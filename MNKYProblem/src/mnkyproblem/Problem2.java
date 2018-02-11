@@ -382,6 +382,38 @@ public class Problem2 {
       if((s.getVehicle2().atOrigin())&&!(s.getVehicle1().atOrigin())){
           
       }
+      if(s.carry1 == true && s.carry2 == true  && s.getVehicle1().compare(s.getfirstPackage()) && s.getVehicle2().compare(s.getSecPackage())){
+          System.out.println("1!!");
+          s.setVehicle1Location(goal4.getfirstPackage());
+          s.setCarry1(false);
+          s.setVehicle2Location(goal4.getSecPackage());
+          s.setCarry2(false);
+          s.setPackage2Location(goal4.getSecPackage());
+          s.setPackage1Location(goal4.getfirstPackage());
+          state4List.add(s);
+          System.out.println(s);
+      }
+        if(s.carry1 == true && s.carry2 == true  && s.getVehicle1().compare(s.getSecPackage()) && s.getVehicle2().compare(s.getfirstPackage())){
+          System.out.println("2!!");
+            s.setVehicle2Location(goal4.getfirstPackage());
+            s.setCarry1(false);
+            s.setVehicle1Location(goal4.getSecPackage());
+            s.setCarry2(false);
+            s.setPackage2Location(goal4.getfirstPackage());
+            s.setPackage1Location(goal4.getSecPackage());
+            state4List.add(s);
+            System.out.println(s);
+        }
+        if(s.carry1 == false && s.carry2 == false && s.getfirstPackage().compare(goal4.getfirstPackage()) && s.getSecPackage().compare(goal4.getSecPackage())){
+            System.out.println("Here");
+            s.setVehicle1Location(goal4.getVehicle1());
+            s.setVehicle2Location(goal4.getVehicle1());
+            state4List.add(s);
+            System.out.println(s);
+        }
+
+
+
     }
 
 }

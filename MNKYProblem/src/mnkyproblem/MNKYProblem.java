@@ -44,6 +44,7 @@ public class MNKYProblem {
     Package iP2=new Package(8,8);
     Package iP3=new Package(10,10);
     iVeh = new Vehicle(0,0);
+    Vehicle iVeh2 = new Vehicle(0,0);
     gVeh=new Vehicle(0,0);
     State2 init = new State2(iVeh,iPack,iPack2,carry,carry);
     State2 g=new State2(gVeh,gPack1,gPack2,false,false);
@@ -63,14 +64,23 @@ public class MNKYProblem {
     g1.addCarry(false);
     g1.addCarry(false);
     g1.addCarry(false);
-    
+    Vehicle vech2 = new Vehicle(6,6);
+    Vehicle veh3 = new Vehicle(8,8);
 
-    System.out.println( "The initial state is: ");
-    System.out.print(i1);
-    System.out.print("\n\n");
-    Problem2 pro = new Problem2(g1);
-    pro.successor(i1);
-    
+
+    State4 i4 = new State4(vech2,veh3,iP1,iP2,true,true);
+    System.out.println(i4);
+    State4 g4 = new State4(iVeh,iVeh2,iP1,iP2,false,false);
+    Problem2 problem2 = new Problem2(g4);
+    problem2.successor(i4);
+
+//
+//    System.out.println( "The initial state is: ");
+//    System.out.print(i1);
+//    System.out.print("\n\n");
+//    Problem2 pro = new Problem2(g1);
+//   pro.successor(i1);
+////
 
     //test.search2(pro, init);
 
@@ -80,9 +90,8 @@ public class MNKYProblem {
     //test.search2(pro, init);
     //test.search2(prob, init_state);
     //test.DFS(pro,init);
-    test.search3(pro, i1);
-    
-   
+//    test.search3(pro, i1);
+
  
 
 
