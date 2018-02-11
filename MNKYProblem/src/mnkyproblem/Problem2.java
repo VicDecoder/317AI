@@ -171,15 +171,15 @@ public class Problem2 {
         if(s.getVehicle().atOrigin()){
             
             boolean tmp=false;
-        
-            for(int i=0; i<s.count;i++){
-                System.out.println("MAde it here!!");
+
+            for(int i=0; i<s.packages.size();i++){
+                //System.out.println("MAde it here!!");
                 if(s.getPackage(i).compare(goal3.getPackage(i))){
                    tmp=true; 
                 }
             
                 if (tmp){
-                    //for(int i=0; i<s.count;i++){
+                    {
                      State3 a=new State3(s.getVehicle(),s.count);
                      a.setVehicleLocation(s.getPackage(i));
                      a.setAllPackages(s.getpackages());
@@ -187,7 +187,7 @@ public class Problem2 {
                      a.setCarry(i, true);
                      state3List.add(a);
                      System.out.print(a);
-                    //}
+                    }
                 }
             }
                 
@@ -268,7 +268,7 @@ public class Problem2 {
     
     
        public boolean isGoal3(State3 tmp){
-        if(tmp.getVehicle().compare(goal2.getVehicle())){
+        if(tmp.getVehicle().compare(goal3.getVehicle())){
           for(int i =0; i<tmp.count;i++){
                 if(tmp.getPackage(i).compare(goal3.getPackage(i))){
                     if(tmp.getCarry(i)==goal3.getCarry(i)){

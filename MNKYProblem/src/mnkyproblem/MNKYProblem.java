@@ -54,12 +54,12 @@ public class MNKYProblem {
     i1.addCarry(false);
     
     State3 g1 = new State3(iVeh,3);
-    i1.addPackage(iP1);
-    i1.addPackage(iP2);
-    i1.addPackage(iP3);
-    i1.addCarry(false);
-    i1.addCarry(false);
-    i1.addCarry(false);
+    g1.addPackage(iP1);
+    g1.addPackage(iP2);
+    g1.addPackage(iP3);
+    g1.addCarry(false);
+    g1.addCarry(false);
+    g1.addCarry(false);
     
 
     System.out.println( "The initial state is: ");
