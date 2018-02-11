@@ -15,11 +15,13 @@ public class Package extends Location{
     float postX ;
     float postY;
     
+    
     public Package(float a, float b){
         postX = a;
         postY=b;
         setX(a);
         setY(b);
+      
        
     }
     public float getPost(){

@@ -105,5 +105,27 @@ public State3 search3(Problem2 prob,State3 init){
     }
     return init;    
 } 
+public State3 search4(Problem2 prob,State3 init){
+    Stack<State3> s=new Stack<>();
+    s.push(init);
+    
+    while(!s.isEmpty()){
+        
+        State3 tmp=s.pop();
+        if(prob.isGoal3(tmp)){
+          System.out.println("The goal is\n"+tmp);
+            return tmp;  
+        }
+        else{
+            prob.successor(tmp);
+            LinkedList<State3> next=prob.getList3();
+            for(State3 i: next){
+                s.push(i);
+            }
+        }
+    }
+    return init;    
+} 
+
 
 }

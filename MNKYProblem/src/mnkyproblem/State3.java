@@ -6,6 +6,7 @@
 package mnkyproblem;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -13,16 +14,21 @@ import java.util.ArrayList;
  */
 public class State3 {
     Vehicle veh;
-    ArrayList<Package> packages;
+    LinkedList<Package> packages;
     int count;
-    ArrayList<Boolean> carry;
+    LinkedList<Boolean> carry;
+    
+
+    
+    
 
     public State3(Vehicle v,int c)
     {
         veh = v;
         count=c;
-        packages=new ArrayList<Package>();
-        carry=new ArrayList<Boolean>();
+        packages=new LinkedList<Package>();
+        carry=new LinkedList<Boolean>();
+       
         
     }
 
@@ -69,25 +75,28 @@ public class State3 {
     }
     public void addPackage(Package p){
         packages.add(p);
+        
+        
        
     }
     public void addCarry(boolean value){
         carry.add(value);
+    
     }
-    public ArrayList<Package> getpackages(){
+    public LinkedList<Package> getpackages(){
         return packages;
     }
-    public ArrayList<Boolean> getcarrys(){
+    public LinkedList<Boolean> getcarrys(){
         return carry;
     }
-    public void setAllCarry(ArrayList<Boolean> tmp){
-        for(int i=0;i<tmp.size();i++){
-            carry.set(i,tmp.get(i));
-        }
+    public void setAllCarry(LinkedList<Boolean> tmp){
+       for(Boolean b: tmp){
+           carry.add(b);
+       }
     }
-    public void setAllPackages(ArrayList<Package> tmp){
-        for(int i=0;i<tmp.size();i++){
-            packages.set(i,tmp.get(i));
+    public void setAllPackages(LinkedList<Package> tmp){
+        for(Package p:tmp){
+            packages.add(p);
         }
         
     }

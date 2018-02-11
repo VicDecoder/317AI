@@ -22,6 +22,7 @@ public class Problem2 {
     private LinkedList<State> stateList;
     private LinkedList<State2> state2List;
     private LinkedList<State3> state3List;
+  
     
     public Problem2(State s,State goalState){
         initState=s;
@@ -164,22 +165,27 @@ public class Problem2 {
            state2List.add(a);
          }
       }
+    
+    
+    
     public void successor(State3 s){
         boolean compare=true;
         boolean temp=false;
         
         if(s.getVehicle().atOrigin()){
             
+            
             boolean tmp=false;
         
             for(int i=0; i<s.count;i++){
-                System.out.println("MAde it here!!");
-                if(s.getPackage(i).compare(goal3.getPackage(i))){
+                
+                if(!s.getPackage(i).compare(goal3.getPackage(i))){
                    tmp=true; 
                 }
             
                 if (tmp){
                     //for(int i=0; i<s.count;i++){
+                    System.out.println("1");
                      State3 a=new State3(s.getVehicle(),s.count);
                      a.setVehicleLocation(s.getPackage(i));
                      a.setAllPackages(s.getpackages());
@@ -189,37 +195,43 @@ public class Problem2 {
                      System.out.print(a);
                     //}
                 }
+             
             }
+            
                 
         }
         
-      for(int i = 0; i<s.count; i++){
+      for(int i = 0; i<s.count; i++){ 
+      
           if(s.getVehicle().compare(s.getPackage(i)) && s.getCarry(i) == true){
+              System.out.println("2");
               s.setVehicleLocation(goal3.getPackage(i));
               s.setPackageLocation(i, goal3.getPackage(i));
               s.setCarry(i, false);
               state3List.add(s);
               System.out.println(s);
           }
-          if(s.getVehicle().compare(goal3.getPackage(i)) && s.getCarry(i)==false){
-              for(int j = 0; j< s.count;j++){
+          if(s.getVehicle().compare(goal3.getPackage(i)) && s.getCarry(i)==false  )  {
+               System.out.println("3");
+              
+              for(int j = i; j< s.count;j++){
                   if(!s.getPackage(j).compare(goal3.getPackage(j)) && s.getCarry(j) == false){
+                       System.out.println("4");
                       s.setVehicleLocation(s.getPackage(j));
                      s.setCarry(j, true);
                      state3List.add(s);
                      System.out.println(s);
-                     break;
+                     
                   }
-                  else{
-                      break;
-                  }
+                  
               }
           }
-         temp=compare && s.getPackage(i).compare(goal3.getPackage(i));
+         compare=compare & s.getPackage(i).compare(goal3.getPackage(i));
          
           
         }
-      if (temp==true){
+      if (compare==true){
+          System.out.println("5");
           s.setVehicleLocation(goal3.getVehicle());
           state3List.add(s);
           System.out.println(s);
@@ -268,14 +280,18 @@ public class Problem2 {
     
     
        public boolean isGoal3(State3 tmp){
-        if(tmp.getVehicle().compare(goal2.getVehicle())){
+        if(tmp.getVehicle().compare(goal3.getVehicle())){
+           boolean compare=true;
+         
+           boolean cCarry=true;
           for(int i =0; i<tmp.count;i++){
-                if(tmp.getPackage(i).compare(goal3.getPackage(i))){
-                    if(tmp.getCarry(i)==goal3.getCarry(i)){
-                         return true;
-                    }
-                }
+              
+                compare = compare & tmp.getPackage(i).compare(goal3.getPackage(i));
+                
+                cCarry=cCarry & (tmp.getCarry(i)==goal3.getCarry(i));
+                
             }
+          if(compare&cCarry){return true;}
          }
         return false;
     }

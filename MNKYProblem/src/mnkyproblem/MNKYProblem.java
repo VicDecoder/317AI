@@ -5,6 +5,8 @@
  */
 package mnkyproblem;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author victor
@@ -53,13 +55,14 @@ public class MNKYProblem {
     i1.addCarry(false);
     i1.addCarry(false);
     
+    
     State3 g1 = new State3(iVeh,3);
-    i1.addPackage(iP1);
-    i1.addPackage(iP2);
-    i1.addPackage(iP3);
-    i1.addCarry(false);
-    i1.addCarry(false);
-    i1.addCarry(false);
+    g1.addPackage(iP1);
+    g1.addPackage(iP2);
+    g1.addPackage(iP3);
+    g1.addCarry(false);
+    g1.addCarry(false);
+    g1.addCarry(false);
     
 
     System.out.println( "The initial state is: ");
@@ -78,6 +81,11 @@ public class MNKYProblem {
     //test.search2(prob, init_state);
     //test.DFS(pro,init);
     test.search3(pro, i1);
+   ArrayList<Integer> a = new ArrayList<>();
+   a.add(1);
+   a.add(2);
+  int b = a.get(0);
+  System.out.println(b);
 
 
     }
