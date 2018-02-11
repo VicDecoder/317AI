@@ -12,17 +12,17 @@ import java.util.LinkedList;
  * @author victor
  */
 public class State4 {
-    Vehicle v1;
-    Vehicle v2;
-    Package pac1;
-    Package pac2;
-    boolean carry1;
-    boolean carry2;
+    private Vehicle v1;
+   private Vehicle v2;
+    private Package pac1;
+    private Package pac2;
+     private boolean carry1;
+    private boolean carry2;
 
-    public State4(Vehicle v,Vehicle b, Package p1,Package p2, boolean input1, boolean input2)
+    public State4(Vehicle vehicle1,Vehicle vehicle2, Package p1,Package p2, boolean input1, boolean input2)
     {
-        v1=v;
-        v2 = b;
+        v1=vehicle1;
+        v2 = vehicle2;
         pac1 = p1;
         pac2=p2;
         carry1 = input1;
@@ -69,25 +69,25 @@ public class State4 {
     public void setVehicle1Location(Location l)
     {
         
-        this.v1.setLocation(l.getX(), l.getX());
+        this.v1.setLocation(l.getX(), l.getY());
 
     }
     public void setVehicle2Location(Location l)
     {
         
-        this.v2.setLocation(l.getX(), l.getX());
+        this.v2.setLocation(l.getX(), l.getY());
 
     }
 
 
     public void setPackage1Location(Location l)
     {
-        this.pac1.setLocation(l.getX(), l.getX());
+        this.pac1.setLocation(l.getX(), l.getY());
 
     }
     public void setPackage2Location(Location l)
     {
-        this.pac2.setLocation(l.getX(), l.getX());
+        this.pac2.setLocation(l.getX(), l.getY());
 
     }
 
