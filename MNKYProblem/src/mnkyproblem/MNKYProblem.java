@@ -64,11 +64,11 @@ public class MNKYProblem {
     g1.addCarry(false);
     g1.addCarry(false);
     g1.addCarry(false);
-    Vehicle vech2 = new Vehicle(6,6);
-    Vehicle veh3 = new Vehicle(8,8);
+    Vehicle vech2 = new Vehicle(0,0);
+    Vehicle veh3 = new Vehicle(0,0);
 
 
-    State4 i4 = new State4(vech2,veh3,iP1,iP2,true,true);
+    State4 i4 = new State4(vech2,veh3,iPack,iPack2,false,false);
     System.out.println(i4);
     State4 g4 = new State4(iVeh,iVeh2,iP1,iP2,false,false);
     Problem2 problem2 = new Problem2(g4);

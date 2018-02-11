@@ -305,6 +305,7 @@ public class Problem2 {
           a.setVehicle1Location(s.pac1);
           a.setCarry1(true);
           state4List.add(a);
+          System.out.println("A");
           System.out.println(a);
           
           //THe first goes to second package 
@@ -312,23 +313,26 @@ public class Problem2 {
           b.setVehicle1Location(s.pac2);
           b.setCarry1(true);
           state4List.add(b);
+          System.out.println("b");
           System.out.println(b);
           
           
           //The second vehicle goes to first package
           State4 c=new State4(s.v1,s.v2,s.pac1,s.pac2,s.carry1,s.carry2);
           c.setVehicle2Location(s.pac1);
-          //c.setVehicle1Location(goal4.getVehicle1());
+          c.setVehicle1Location(goal4.getVehicle1());
           c.setCarry1(true);
           state4List.add(c);
+          System.out.println("c");
           System.out.println(c);
           
           //The second vehicle goes to second packaage
           State4 d=new State4(s.v1,s.v2,s.pac1,s.pac2,s.carry1,s.carry2);
           d.setVehicle2Location(s.pac2);
-          //d.setVehicle1Location(goal4.getVehicle1());
+          d.setVehicle1Location(goal4.getVehicle1());
           d.setCarry2(true);
           state4List.add(d);
+          System.out.println("d");
           System.out.println(d);
           
           //The first goes to first an dsecond car goes to second
@@ -338,6 +342,7 @@ public class Problem2 {
           e.setCarry1(true);
           e.setCarry2(true);
           state4List.add(e);
+          System.out.println("e");
           System.out.println(e);
           
           //The first goes to second an dsecond car goes to first
@@ -347,6 +352,7 @@ public class Problem2 {
           f.setCarry1(true);
           f.setCarry2(true);
           state4List.add(f);
+          System.out.println("f");
           System.out.println(f);
         }
       if((s.getVehicle1().atOrigin())&&!(s.getVehicle2().atOrigin())){
@@ -358,25 +364,28 @@ public class Problem2 {
               f.setCarry1(false);
               state4List.add(f);
               System.out.println(f);
-              s.setVehicle2Location(s.getfirstPackage());
-             // s.setPackage2Location(s.getfirstPackage());
+              
+              System.out.println(f);
+              a.setVehicle2Location(s.getfirstPackage());
+              a.setPackage2Location(s.getfirstPackage());
               s.setCarry1(true);
-              state4List.add(s);
-              System.out.println(s);
+              state4List.add(a);
+              System.out.println(a);
               
             }else{
-              if(s.getCarry2()==false){
-                s.setVehicle1Location(goal4.getSecPackage());
-                s.setPackage1Location(goal4.getSecPackage());
-                s.setCarry1(false);
-                state4List.add(s);
-                System.out.println(s);
-              }
-              s.setVehicle2Location(s.getSecPackage());
-              s.setPackage1Location(s.getSecPackage());
-              s.setCarry2(true);
-              state4List.add(s);
-              System.out.println(s);
+              State4 f=new State4(s.v1,s.v2,s.pac1,s.pac2,s.carry1,s.carry2);
+              State4 a=new State4(s.v1,s.v2,s.pac1,s.pac2,s.carry1,s.carry2);
+              f.setVehicle2Location(goal4.getfirstPackage());
+              f.setPackage2Location(goal4.getfirstPackage());
+              f.setCarry1(false);
+              state4List.add(f);
+              
+              System.out.println(f);
+              a.setVehicle2Location(s.getSecPackage());
+              a.setPackage2Location(s.getSecPackage());
+              s.setCarry1(true);
+              state4List.add(a);
+              System.out.println(a);
           }
               
           
@@ -384,9 +393,10 @@ public class Problem2 {
 
       if((s.getVehicle2().atOrigin())&&!(s.getVehicle1().atOrigin())){
           
+          
       }
       if(s.carry1 == true && s.carry2 == true  && s.getVehicle1().compare(s.getfirstPackage()) && s.getVehicle2().compare(s.getSecPackage())){
-          System.out.println("1!!");
+          System.out.println("1");
           s.setVehicle1Location(goal4.getfirstPackage());
           s.setCarry1(false);
           s.setVehicle2Location(goal4.getSecPackage());
