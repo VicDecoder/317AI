@@ -176,16 +176,27 @@ public class Problem2 {
             
             
             boolean tmp=false;
+<<<<<<< HEAD
         
             for(int i=0; i<s.count;i++){
                 
                 if(!s.getPackage(i).compare(goal3.getPackage(i))){
+=======
+
+            for(int i=0; i<s.packages.size();i++){
+                //System.out.println("MAde it here!!");
+                if(s.getPackage(i).compare(goal3.getPackage(i))){
+>>>>>>> 682f797f42e4048340a1652cae23506a9e876f80
                    tmp=true; 
                 }
             
                 if (tmp){
+<<<<<<< HEAD
                     //for(int i=0; i<s.count;i++){
                     System.out.println("1");
+=======
+                    {
+>>>>>>> 682f797f42e4048340a1652cae23506a9e876f80
                      State3 a=new State3(s.getVehicle(),s.count);
                      a.setVehicleLocation(s.getPackage(i));
                      a.setAllPackages(s.getpackages());
@@ -193,7 +204,7 @@ public class Problem2 {
                      a.setCarry(i, true);
                      state3List.add(a);
                      System.out.print(a);
-                    //}
+                    }
                 }
              
             }
@@ -281,9 +292,12 @@ public class Problem2 {
     
        public boolean isGoal3(State3 tmp){
         if(tmp.getVehicle().compare(goal3.getVehicle())){
+<<<<<<< HEAD
            boolean compare=true;
          
            boolean cCarry=true;
+=======
+>>>>>>> 682f797f42e4048340a1652cae23506a9e876f80
           for(int i =0; i<tmp.count;i++){
               
                 compare = compare & tmp.getPackage(i).compare(goal3.getPackage(i));
