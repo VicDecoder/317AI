@@ -22,6 +22,8 @@ public class Vehicle extends Location{
         thePackages=new LinkedList<>();
         originX=x;
         originY=y;
+        setX(x);
+        setY(y);
      }
      public void addPackage(Package p){
          thePackages.add(p);
