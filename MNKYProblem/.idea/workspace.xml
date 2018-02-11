@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69ae3d9c-df47-45b2-b010-60808544c896" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="69ae3d9c-df47-45b2-b010-60808544c896" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#2192#0" expanded="true" />
+                <element signature="e#0#2201#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -289,7 +287,7 @@
       <updated>1518130240372</updated>
       <workItem from="1518130244110" duration="1315000" />
       <workItem from="1518131684668" duration="26000" />
-      <workItem from="1518382927300" duration="100000" />
+      <workItem from="1518382927300" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Added a little stuff for Vehicle">
       <created>1518131022700</created>
@@ -309,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1441000" />
+    <option name="totallyTimeSpent" value="1941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="783" extended-state="0" />
@@ -364,7 +362,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2192#0" expanded="true" />
+            <element signature="e#0#2201#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -444,7 +442,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2192#0" expanded="true" />
+            <element signature="e#0#2201#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -504,7 +502,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2192#0" expanded="true" />
+            <element signature="e#0#2201#0" expanded="true" />
           </folding>
         </state>
       </provider>
