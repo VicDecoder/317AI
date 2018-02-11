@@ -81,11 +81,7 @@ public class MNKYProblem {
     //test.search2(prob, init_state);
     //test.DFS(pro,init);
     test.search3(pro, i1);
-   ArrayList<Integer> a = new ArrayList<>();
-   a.add(1);
-   a.add(2);
-  int b = a.get(0);
-  System.out.println(b);
+ 
 
 
     }
