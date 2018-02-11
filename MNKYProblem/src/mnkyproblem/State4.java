@@ -21,8 +21,8 @@ public class State4 {
 
     public State4(Vehicle v,Vehicle b, Package p1,Package p2, boolean input1, boolean input2)
     {
-        v1=b;
-        v2 = v;
+        v1=v;
+        v2 = b;
         pac1 = p1;
         pac2=p2;
         carry1 = input1;
