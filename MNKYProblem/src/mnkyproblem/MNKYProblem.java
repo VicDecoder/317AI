@@ -32,38 +32,53 @@ public class MNKYProblem {
     prob.successor(init_state);
     */
     Search test = new Search();
-
-<<<<<<< HEAD
-=======
-    
->>>>>>> 6a82b9992a7fea3a9888fe69d13092db7740294a
-    
+  
     iPack = new Package(1,1);
     Package iPack2=new Package(2,2);
     Package gPack1=new Package(3,3);
     Package gPack2=new Package(4,4);
+    
+    Package iP1=new Package(6,6);
+    Package iP2=new Package(8,8);
+    Package iP3=new Package(10,10);
     iVeh = new Vehicle(0,0);
     gVeh=new Vehicle(0,0);
     State2 init = new State2(iVeh,iPack,iPack2,carry,carry);
     State2 g=new State2(gVeh,gPack1,gPack2,false,false);
+    State3 i1 = new State3(iVeh,3);
+    i1.addPackage(iPack);
+    i1.addPackage(iPack2);
+    i1.addPackage(gPack1);
+    i1.addCarry(false);
+    i1.addCarry(false);
+    i1.addCarry(false);
+    
+    State3 g1 = new State3(iVeh,3);
+    i1.addPackage(iP1);
+    i1.addPackage(iP2);
+    i1.addPackage(iP3);
+    i1.addCarry(false);
+    i1.addCarry(false);
+    i1.addCarry(false);
+    
 
     System.out.println( "The initial state is: ");
-    System.out.print(init);
+    System.out.print(i1);
     System.out.print("\n\n");
-    Problem2 pro = new Problem2(g);
-    pro.successor(init);
+    Problem2 pro = new Problem2(g1);
+    pro.successor(i1);
+    
 
-
-<<<<<<< HEAD
-    test.search2(pro, init);
+    //test.search2(pro, init);
 
     //test.search2(prob, init_state);
    // test.DFS(prob,init_state);
-=======
+
     //test.search2(pro, init);
     //test.search2(prob, init_state);
-    test.DFS(pro,init);
->>>>>>> 6a82b9992a7fea3a9888fe69d13092db7740294a
+    //test.DFS(pro,init);
+    test.search3(pro, i1);
+
 
     }
     

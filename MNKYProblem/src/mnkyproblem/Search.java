@@ -68,22 +68,42 @@ public State2 DFS(Problem2 prob, State2 init){
 
         else{
             prob.successor(temp);
-<<<<<<< HEAD
+
             //LinkedList<State> next = prob.ge();
            // for(State i: next){
              //   s.add(i);
-            //}
-=======
+
             LinkedList<State2> next = prob.getList2();
             for(State2 i: next){
-                s.add(i);
+                s.push(i);
             }
->>>>>>> 6a82b9992a7fea3a9888fe69d13092db7740294a
+
         }
     }
 
     return init;
 }
 
+public State3 search3(Problem2 prob,State3 init){
+    Queue<State3> q=new LinkedList<>();
+    q.add(init);
     
+    while(!q.isEmpty()){
+        
+        State3 tmp=q.poll();
+        if(prob.isGoal3(tmp)){
+          System.out.println("The goal is\n"+tmp);
+            return tmp;  
+        }
+        else{
+            prob.successor(tmp);
+            LinkedList<State3> next=prob.getList3();
+            for(State3 i: next){
+                q.add(i);
+            }
+        }
+    }
+    return init;    
+} 
+
 }

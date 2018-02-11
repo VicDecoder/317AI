@@ -15,14 +15,15 @@ public class State3 {
     Vehicle veh;
     ArrayList<Package> packages;
     int count;
-    boolean carry1;
-    boolean carry2;
+    ArrayList<Boolean> carry;
 
     public State3(Vehicle v,int c)
     {
         veh = v;
         count=c;
-        packages=new ArrayList<Package>(0);
+        packages=new ArrayList<Package>();
+        carry=new ArrayList<Boolean>();
+        
     }
 
 
@@ -31,31 +32,18 @@ public class State3 {
         return this.veh;
 
     }
-    /*
-    public Package getfirstPackage()
+   
+    public Package getPackage(int value)
     {
-        return this.pac1;
+        return this.packages.get(value);
     }
     
-     public Package getSecPackage()
+    public boolean getCarry(int value)
     {
-        return this.pac2;
-    }
-
-
-    public boolean getCarry1()
-    {
-        return this.carry1;
+        return this.carry.get(value);
 
     }
-    public boolean getCarry2()
-    {
-        return this.carry2;
-
-    }
-
-
-
+    
     public void setVehicleLocation(Location l)
     {
         
@@ -64,37 +52,60 @@ public class State3 {
     }
 
 
-    public void setPackage1Location(Location l)
+    public void setPackageLocation(int value,Location l)
     {
-        this.pac1.setLocation(l.getX(), l.getX());
+        this.packages.get(value).setLocation(l.getX(), l.getX());
 
     }
-    public void setPackage2Location(Location l)
-    {
-        this.pac2.setLocation(l.getX(), l.getX());
+    
+    public void setCarry(int value,boolean bool)
+    {   if(bool){
+        this.carry.set(value,Boolean.TRUE);
+    }else{
+        this.carry.set(value,Boolean.TRUE);
+    }
+    
 
     }
-
-
-    public void setCarry1(boolean input)
-    {
-        this.carry1 = input;
-
+    public void addPackage(Package p){
+        packages.add(p);
+       
     }
-    public void setCarry2(boolean input)
-    {
-        this.carry2 = input;
-
+    public void addCarry(boolean value){
+        carry.add(value);
+    }
+    public ArrayList<Package> getpackages(){
+        return packages;
+    }
+    public ArrayList<Boolean> getcarrys(){
+        return carry;
+    }
+    public void setAllCarry(ArrayList<Boolean> tmp){
+        for(int i=0;i<tmp.size();i++){
+            carry.set(i,tmp.get(i));
+        }
+    }
+    public void setAllPackages(ArrayList<Package> tmp){
+        for(int i=0;i<tmp.size();i++){
+            packages.set(i,tmp.get(i));
+        }
+        
     }
     
     public String toString(){
         String str;
         str="V=["+veh.getX()+"]["+veh.getY()+"]";
-        str=str+"\nP=["+pac1.getX()+"]["+pac1.getY()+"] | "  ;
-        str=str+"["+pac2.getX()+"]["+pac2.getY()+"]";
-        str=str+"\nC=["+carry1+"]["+carry2+"]";
+        str=str+"\n";
+        for(int i=0; i <count;i++){
+        str=str+"P=["+packages.get(i).getX()+"]["+packages.get(i).getY()+"] | "  ;
+        }
+        str=str+"\n";
+        for(int i=0; i <count;i++){
+        str=str+"C=["+carry.get(i)+"]"; ;
+        }
+        
         str=str+"\n";
         return str;
     }
- */   
+    
 }

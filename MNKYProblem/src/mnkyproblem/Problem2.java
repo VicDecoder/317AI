@@ -17,9 +17,11 @@ public class Problem2 {
     
     private State2 init2;
     private State2 goal2;
+    private State3 goal3;
     
     private LinkedList<State> stateList;
     private LinkedList<State2> state2List;
+    private LinkedList<State3> state3List;
     
     public Problem2(State s,State goalState){
         initState=s;
@@ -30,6 +32,10 @@ public class Problem2 {
 
        goal2=goalState;
        state2List=new LinkedList();
+    }
+    public Problem2(State3 g){
+        goal3=g;
+        state3List=new LinkedList<>();
     }
     
     //This function is solves the M=1 N=1 k=1 y=2 problem.We kept it to understand the fucntion
@@ -157,10 +163,68 @@ public class Problem2 {
            System.out.println(a);
            state2List.add(a);
          }
+      }
+    public void successor(State3 s){
+        boolean compare=true;
+        boolean temp=false;
         
+        if(s.getVehicle().atOrigin()){
+            
+            boolean tmp=false;
         
+            for(int i=0; i<s.count;i++){
+                System.out.println("MAde it here!!");
+                if(s.getPackage(i).compare(goal3.getPackage(i))){
+                   tmp=true; 
+                }
+            
+                if (tmp){
+                    //for(int i=0; i<s.count;i++){
+                     State3 a=new State3(s.getVehicle(),s.count);
+                     a.setVehicleLocation(s.getPackage(i));
+                     a.setAllPackages(s.getpackages());
+                     a.setAllCarry(s.getcarrys());
+                     a.setCarry(i, true);
+                     state3List.add(a);
+                     System.out.print(a);
+                    //}
+                }
+            }
+                
+        }
         
-        
+      for(int i = 0; i<s.count; i++){
+          if(s.getVehicle().compare(s.getPackage(i)) && s.getCarry(i) == true){
+              s.setVehicleLocation(goal3.getPackage(i));
+              s.setPackageLocation(i, goal3.getPackage(i));
+              s.setCarry(i, false);
+              state3List.add(s);
+              System.out.println(s);
+          }
+          if(s.getVehicle().compare(goal3.getPackage(i)) && s.getCarry(i)==false){
+              for(int j = 0; j< s.count;j++){
+                  if(!s.getPackage(j).compare(goal3.getPackage(j)) && s.getCarry(j) == false){
+                      s.setVehicleLocation(s.getPackage(j));
+                     s.setCarry(j, true);
+                     state3List.add(s);
+                     System.out.println(s);
+                     break;
+                  }
+                  else{
+                      break;
+                  }
+              }
+          }
+         temp=compare && s.getPackage(i).compare(goal3.getPackage(i));
+         
+          
+        }
+      if (temp==true){
+          s.setVehicleLocation(goal3.getVehicle());
+          state3List.add(s);
+          System.out.println(s);
+      }
+           
     }
     
     public float distance(State state1, State state2){
@@ -200,8 +264,28 @@ public class Problem2 {
         return false;
     }
     public LinkedList<State2> getList2(){
-        return state2List;
+        return state2List;}
+    
+    
+       public boolean isGoal3(State3 tmp){
+        if(tmp.getVehicle().compare(goal2.getVehicle())){
+          for(int i =0; i<tmp.count;i++){
+                if(tmp.getPackage(i).compare(goal3.getPackage(i))){
+                    if(tmp.getCarry(i)==goal3.getCarry(i)){
+                         return true;
+                    }
+                }
+            }
+         }
+        return false;
     }
+    
+    public LinkedList<State3> getList3(){
+        return state3List;}
+
 }
+
+   
+
     
 
