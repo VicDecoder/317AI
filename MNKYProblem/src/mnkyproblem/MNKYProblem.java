@@ -81,7 +81,7 @@ public class MNKYProblem {
     Problem2 problem2 = new Problem2(g4);
     //problem2.successor(i4);
     Search test = new Search();
-    test.search4(problem2,i4);
+    test.DFS4(problem2,i4);
 
 //
 //    System.out.println( "The initial state is: ");
