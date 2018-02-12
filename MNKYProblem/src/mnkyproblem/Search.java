@@ -105,5 +105,27 @@ public State3 search3(Problem2 prob,State3 init){
     }
     return init;    
 } 
-
+public State4 search4(Problem2 prob, State4 init){
+      Queue<State4> q=new LinkedList<>();
+    q.add(init);
+    
+    while(!q.isEmpty()){
+        
+        State4 tmp=q.poll();
+        if(prob.isGoal4(tmp)){
+          System.out.println("The goal is\n"+tmp);
+            return tmp;  
+        }
+        else{
+            prob.successor(tmp);
+            LinkedList<State4> next=prob.getList4();
+            //System.out.println("The lsit is "+next);
+            for(State4 i: next){
+                q.add(i);
+            }
+        }
+    }
+    return init; 
+    
+}
 }

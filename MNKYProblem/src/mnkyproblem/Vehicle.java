@@ -33,10 +33,8 @@ public class Vehicle extends Location{
 
      }
      public boolean atOrigin(){
-         if(this.x==originX){
-             if(this.y==originY){
-                 return true;
-             }
+         if(this.x==originX && this.y == originY){
+             return true;
              
          }
      

@@ -12,12 +12,12 @@ import java.util.LinkedList;
  * @author victor
  */
 public class State4 {
-    private Vehicle v1;
-   private Vehicle v2;
-    private Package pac1;
-    private Package pac2;
-     private boolean carry1;
-    private boolean carry2;
+    Vehicle v1;
+    Vehicle v2;
+     Package pac1;
+     Package pac2;
+      boolean carry1;
+     boolean carry2;
 
     public State4(Vehicle vehicle1,Vehicle vehicle2, Package p1,Package p2, boolean input1, boolean input2)
     {
