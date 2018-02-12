@@ -121,6 +121,9 @@ public State4 search4(Problem2 prob, State4 init){
         if(prob.isGoal4(tmp)){
           System.out.println("The goal is\n"+tmp);
           System.out.println("The amount of states gone through is: "+count);
+          float mp=Math.max(tmp.getVehicle1().getTravelled(), tmp.getVehicle2().getTravelled());
+           float value =mp/10;
+           System.out.println("The time taken is :"+value);
             return tmp;  
         }
         else{
@@ -144,10 +147,12 @@ public State4 DFS4(Problem2 prob, State4 init){
         count++;
         State4 tmp=q.pop();
         if(prob.isGoal4(tmp)){
-           float mp=Math.max(tmp.getVehicle1().getTravelled(), tmp.getVehicle2().getTravelled());
-           float value =mp/1;//10 is the speed constant
+           //10 is the speed constant
            System.out.println("The goal is\n"+tmp);
            System.out.println("The amount of states we had is " + count);
+           float mp=Math.max(tmp.getVehicle1().getTravelled(), tmp.getVehicle2().getTravelled());
+           float value =mp/10;
+           System.out.println("The time taken is :"+value);
             return tmp;  
         }
         else{
@@ -162,7 +167,4 @@ public State4 DFS4(Problem2 prob, State4 init){
 }
     
 }
-
-
-
 
