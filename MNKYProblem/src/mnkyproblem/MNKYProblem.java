@@ -79,7 +79,8 @@ public class MNKYProblem {
     System.out.println(i4);
     State4 g4 = new State4(iVeh,iVeh2,iP1,iP2,false,false);
     Problem2 problem2 = new Problem2(g4);
-    //problem2.successor(i4);
+    
+//    problem2.successor(i4);
     Search test = new Search();
     test.DFS4(problem2,i4);
 

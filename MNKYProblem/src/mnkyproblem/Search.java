@@ -143,7 +143,6 @@ public State4 DFS4(Problem2 prob, State4 init){
         else{
             prob.successor(tmp);
             LinkedList<State4> next=prob.getList4();
-            //System.out.println("The lsit is "+next);
             for(State4 i: next){
                 q.push(i);
             }
