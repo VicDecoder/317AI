@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b619654-c434-4f61-8ab3-c2634556cdf0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/build/built-jar.properties" afterPath="$PROJECT_DIR$/MNKYProblem/build/built-jar.properties" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Location.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Location.class" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/MNKYProblem.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/MNKYProblem.class" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Problem.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Problem.class" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Problem2.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Problem2.class" />
-      <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/State4.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/State4.class" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Search.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Search.class" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/State.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/State.class" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Vehicle.class" afterPath="$PROJECT_DIR$/MNKYProblem/build/classes/mnkyproblem/Vehicle.class" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Location.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Location.java" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/MNKYProblem.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/MNKYProblem.java" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Problem.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Problem.java" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Problem2.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Problem2.java" />
-      <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/State4.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/State4.java" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Search.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Search.java" />
+      <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/State.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/State.java" />
       <change beforePath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Vehicle.java" afterPath="$PROJECT_DIR$/MNKYProblem/src/mnkyproblem/Vehicle.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />

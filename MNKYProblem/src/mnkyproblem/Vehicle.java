@@ -17,7 +17,7 @@ public class Vehicle extends Location{
     private LinkedList<Package> thePackages;
     private float originX;
     private float originY;
-    
+    private float distanceTravelled;
     
      public Vehicle(float x, float y){
         thePackages=new LinkedList<>();
@@ -25,7 +25,7 @@ public class Vehicle extends Location{
         originY=y;
         setX(x);
         setY(y);
-        
+        distanceTravelled=0;
      }
      public void addPackage(Package p){
          thePackages.add(p);
@@ -42,7 +42,17 @@ public class Vehicle extends Location{
      
          return false;
      }
-     
+     public void addtoDistance(Location l){
+        
+         float tmp=((l.getX()-x)*(l.getX()-x))+((l.getY()-y)*(l.getY()-y));
+         
+         tmp = (float)Math.sqrt(tmp);
+         distanceTravelled=distanceTravelled+ tmp;
+       
+     }
+     public float getTravelled(){
+         return distanceTravelled;
+     }
      
 
 }

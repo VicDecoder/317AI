@@ -17,12 +17,13 @@ public class Search {
 public State search(Problem prob,State init){
     Queue<State> q=new LinkedList<>();
     q.add(init);
-    
+    int count=0;
     while(!q.isEmpty()){
-        
+        count++;
         State tmp=q.poll();
         if(prob.isGoal(tmp)){
           System.out.println("The goal is\n"+tmp);
+          System.out.println("The amount of states gone through is :"+count);
             return tmp;  
         }
         else{
@@ -35,15 +36,17 @@ public State search(Problem prob,State init){
     }
     return init;    
 }
+
 public State2 search2(Problem2 prob,State2 init){
     Queue<State2> q=new LinkedList<>();
     q.add(init);
-    
+    int count=0;
     while(!q.isEmpty()){
-        
+        count++;
         State2 tmp=q.poll();
         if(prob.isGoal2(tmp)){
           System.out.println("The goal is\n"+tmp);
+          System.out.println("The amount of states gone thorugh is :"+ count);
             return tmp;  
         }
         else{
@@ -59,10 +62,13 @@ public State2 search2(Problem2 prob,State2 init){
 public State2 DFS(Problem2 prob, State2 init){
     Stack<State2> s = new Stack<>();
     s.add(init);
+    int count=0;
     while(!s.isEmpty()){
+        count++;
         State2 temp = s.pop();
         if(prob.isGoal2(temp)){
             System.out.println("The goal is\n" + temp);
+            System.out.println("The amount of states gone through is :"+count);
             return temp;
         }
 
@@ -108,12 +114,13 @@ public State3 search3(Problem2 prob,State3 init){
 public State4 search4(Problem2 prob, State4 init){
       Queue<State4> q=new LinkedList<>();
     q.add(init);
-    
+    int count=0;
     while(!q.isEmpty()){
-        
+        count++;
         State4 tmp=q.poll();
         if(prob.isGoal4(tmp)){
           System.out.println("The goal is\n"+tmp);
+          System.out.println("The amount of states gone through is: "+count);
             return tmp;  
         }
         else{
@@ -132,14 +139,15 @@ public State4 search4(Problem2 prob, State4 init){
 public State4 DFS4(Problem2 prob, State4 init){
       Stack<State4> q=new Stack<>();
     q.push(init);
-    
+    int count =0;
     while(!q.isEmpty()){
-        
+        count++;
         State4 tmp=q.pop();
         if(prob.isGoal4(tmp)){
            float mp=Math.max(tmp.getVehicle1().getTravelled(), tmp.getVehicle2().getTravelled());
            float value =mp/1;//10 is the speed constant
-           System.out.println("The time taken "+mp);
+           System.out.println("The goal is\n"+tmp);
+           System.out.println("The amount of states we had is " + count);
             return tmp;  
         }
         else{

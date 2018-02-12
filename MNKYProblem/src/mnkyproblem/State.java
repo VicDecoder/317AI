@@ -45,14 +45,14 @@ public class State{
     public void setVehicleLocation(Location l)
     {
         
-        this.veh.setLocation(l.getX(), l.getX());
+        this.veh.setLocation(l.getX(), l.getY());
 
     }
 
 
     public void setPackageLocation(Location l)
     {
-        this.pac.setLocation(l.getX(), l.getX());
+        this.pac.setLocation(l.getX(), l.getY());
 
     }
 
