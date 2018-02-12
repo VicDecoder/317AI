@@ -18,12 +18,14 @@ public class Vehicle extends Location{
     private float originX;
     private float originY;
     
+    
      public Vehicle(float x, float y){
         thePackages=new LinkedList<>();
         originX=x;
         originY=y;
         setX(x);
         setY(y);
+        
      }
      public void addPackage(Package p){
          thePackages.add(p);
@@ -40,6 +42,7 @@ public class Vehicle extends Location{
      
          return false;
      }
+     
      
 
 }

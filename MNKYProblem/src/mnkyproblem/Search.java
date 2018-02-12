@@ -137,7 +137,9 @@ public State4 DFS4(Problem2 prob, State4 init){
         
         State4 tmp=q.pop();
         if(prob.isGoal4(tmp)){
-          System.out.println("The goal is\n"+tmp);
+           float mp=Math.max(tmp.getVehicle1().getTravelled(), tmp.getVehicle2().getTravelled());
+           float value =mp/1;//10 is the speed constant
+           System.out.println("The time taken "+mp);
             return tmp;  
         }
         else{

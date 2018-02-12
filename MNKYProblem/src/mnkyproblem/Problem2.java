@@ -305,6 +305,7 @@ public class Problem2 {
           State4 a=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
 
           a.setVehicle1Location(s.getfirstPackage());
+          a.getVehicle1().addtoDistance(s.getfirstPackage());
           a.setCarry1(true);
           state4List.add(a);
           System.out.println("A");
@@ -314,7 +315,7 @@ public class Problem2 {
           State4 b=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
 
           b.setVehicle1Location(s.getSecPackage());
-
+          b.getVehicle1().addtoDistance(s.getSecPackage());
          
 
           b.setCarry1(true);
@@ -327,7 +328,9 @@ public class Problem2 {
           State4 c=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
 
           c.setVehicle2Location(s.getfirstPackage());
+          c.getVehicle2().addtoDistance(s.getfirstPackage());
           c.setVehicle1Location(goal4.getVehicle1());
+          c.getVehicle1().addtoDistance(goal4.getVehicle1());
           c.setCarry1(true);
           state4List.add(c);
           System.out.println("c");
@@ -337,6 +340,7 @@ public class Problem2 {
           State4 d=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
 
           d.setVehicle2Location(s.getSecPackage());
+          d.getVehicle2().addtoDistance(s.getSecPackage());
 
           d.setVehicle1Location(goal4.getVehicle1());
           d.setCarry2(true);
@@ -348,7 +352,9 @@ public class Problem2 {
           State4 e=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
 
           e.setVehicle1Location(s.getfirstPackage());
+          e.getVehicle1().addtoDistance(s.getfirstPackage());
           e.setVehicle2Location(s.getSecPackage());
+          e.getVehicle2().addtoDistance(s.getSecPackage());
 
           e.setCarry1(true);
           e.setCarry2(true);
@@ -360,7 +366,9 @@ public class Problem2 {
           State4 f=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
 
           f.setVehicle2Location(s.getfirstPackage());
+          f.getVehicle2().addtoDistance(s.getfirstPackage());
           f.setVehicle1Location(s.getSecPackage());
+          f.getVehicle1().addtoDistance(s.getSecPackage());
 
 
           f.setCarry1(true);
@@ -381,7 +389,9 @@ public class Problem2 {
 
 
               f.setVehicle2Location(goal4.getSecPackage());
+              f.getVehicle2().addtoDistance(goal4.getSecPackage());
               f.setPackage2Location(goal4.getSecPackage());
+              
               f.setCarry1(false);
               System.out.println("Delivering the second package");
               state4List.add(f);
@@ -390,6 +400,7 @@ public class Problem2 {
 
               
               s.setVehicle2Location(s.getfirstPackage());
+              s.getVehicle2().addtoDistance(s.getfirstPackage());
               s.setPackage2Location(s.getfirstPackage());
               s.setPackage1Location(s.getfirstPackage());
               s.setCarry1(true);
@@ -403,6 +414,7 @@ public class Problem2 {
 
               
               f.setVehicle2Location(goal4.getfirstPackage());
+              f.getVehicle2().addtoDistance(goal4.getfirstPackage());
               f.setPackage1Location(goal4.getfirstPackage());
               f.setCarry1(false);
               state4List.add(f);
@@ -413,6 +425,7 @@ public class Problem2 {
               
               State4 a=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
               s.setVehicle2Location(s.getSecPackage());
+              s.getVehicle2().addtoDistance(s.getSecPackage());
               s.setPackage2Location(s.getSecPackage());
               s.setPackage1Location(s.getSecPackage());
               s.setCarry1(true);
@@ -436,6 +449,7 @@ public class Problem2 {
 
 
               f.setVehicle1Location(goal4.getSecPackage());
+              f.getVehicle1().addtoDistance(goal4.getSecPackage());
               f.setPackage2Location(goal4.getSecPackage());
               f.setCarry1(false);
               System.out.println("Delivering the second package");
@@ -445,6 +459,7 @@ public class Problem2 {
 
               
               s.setVehicle1Location(s.getfirstPackage());
+              s.getVehicle1().addtoDistance(s.getfirstPackage());
               s.setPackage2Location(s.getfirstPackage());
               s.setPackage1Location(s.getfirstPackage());
               s.setCarry1(true);
@@ -458,6 +473,7 @@ public class Problem2 {
 
               
               f.setVehicle1Location(goal4.getfirstPackage());
+              f.getVehicle1().addtoDistance(goal4.getfirstPackage());
               f.setPackage1Location(goal4.getfirstPackage());
               f.setCarry1(false);
               state4List.add(f);
@@ -468,6 +484,7 @@ public class Problem2 {
               
               State4 a=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
               s.setVehicle1Location(s.getSecPackage());
+              s.getVehicle1().addtoDistance(s.getSecPackage());
               s.setPackage2Location(s.getSecPackage());
               s.setPackage1Location(s.getSecPackage());
               s.setCarry1(true);
@@ -483,6 +500,7 @@ public class Problem2 {
           System.out.println("1");
           State4 a=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
           a.setVehicle1Location(goal4.getfirstPackage());
+          a.getVehicle1().addtoDistance(goal4.getfirstPackage());
           a.setPackage1Location(goal4.getfirstPackage());
           a.setCarry1(false);
           state4List.add(a);
@@ -490,6 +508,7 @@ public class Problem2 {
           
           
           s.setVehicle1Location(goal4.getSecPackage());
+          s.getVehicle1().addtoDistance(goal4.getSecPackage());
           s.setCarry2(false);
           s.setPackage2Location(goal4.getSecPackage());
           state4List.add(s);
@@ -499,6 +518,7 @@ public class Problem2 {
          System.out.println("Vehicle 2 is moving to drop either pf the packages");
           State4 a=new State4(s.getVehicle1(),s.getVehicle2(),s.getfirstPackage(),s.getSecPackage(),s.getCarry1(),s.getCarry2());
           a.setVehicle2Location(goal4.getfirstPackage());
+          a.getVehicle2().addtoDistance(goal4.getfirstPackage());
           a.setPackage1Location(goal4.getfirstPackage());
           a.setCarry1(false);
           state4List.add(a);
@@ -506,6 +526,7 @@ public class Problem2 {
           
           
           s.setVehicle2Location(goal4.getSecPackage());
+          s.getVehicle2().addtoDistance(goal4.getSecPackage());
           s.setCarry2(false);
           s.setPackage2Location(goal4.getSecPackage());
           state4List.add(s);
@@ -514,6 +535,7 @@ public class Problem2 {
        if(s.getCarry1() == false && s.getCarry2() == true  && s.getVehicle1().compare(goal4.getfirstPackage()) && s.getVehicle2().atOrigin()){
           System.out.println("ITs currenly at the deilvery postion of thr first package and delivering the second package");
           s.setVehicle1Location(goal4.getSecPackage());
+          s.getVehicle1().addtoDistance(goal4.getSecPackage());
           s.setCarry2(false);
           state4List.add(s);
           System.out.println(s);
@@ -521,6 +543,7 @@ public class Problem2 {
        if(s.getCarry1() == true && s.getCarry2() == false  && s.getVehicle1().compare(goal4.getSecPackage()) && s.getVehicle2().atOrigin()){
           System.out.println("ITs currenly at the deilvery postion of thr second package and delivering the first package");
           s.setVehicle1Location(goal4.getfirstPackage());
+          s.getVehicle1().addtoDistance(goal4.getfirstPackage());
           s.setCarry1(false);
           state4List.add(s);
           System.out.println(s);
@@ -531,6 +554,7 @@ public class Problem2 {
        if(s.getCarry1() == false && s.getCarry2() == true  && s.getVehicle2().compare(goal4.getfirstPackage()) && s.getVehicle1().atOrigin()){
           System.out.println("ITs currenly at the deilvery postion of thr first package and delivering the second package");
           s.setVehicle2Location(goal4.getSecPackage());
+          s.getVehicle2().addtoDistance(s.getSecPackage());
           s.setCarry2(false);
           state4List.add(s);
           System.out.println(s);
@@ -538,6 +562,7 @@ public class Problem2 {
        if(s.getCarry1() == true && s.getCarry2() == false  && s.getVehicle2().compare(goal4.getSecPackage()) && s.getVehicle1().atOrigin()){
           System.out.println("ITs currenly at the deilvery postion of thr second package and delivering the first package");
           s.setVehicle2Location(goal4.getfirstPackage());
+          s.getVehicle2().addtoDistance(goal4.getfirstPackage());
           s.setCarry1(false);
           state4List.add(s);
           System.out.println(s);
@@ -550,8 +575,10 @@ public class Problem2 {
       if(s.getCarry1() == true && s.getCarry2() == true  && s.getVehicle1().compare(s.getfirstPackage()) && s.getVehicle2().compare(s.getSecPackage())){
           System.out.println("1");
           s.setVehicle1Location(goal4.getfirstPackage());
+          s.getVehicle1().addtoDistance(goal4.getfirstPackage());
           s.setCarry1(false);
           s.setVehicle2Location(goal4.getSecPackage());
+          s.getVehicle2().addtoDistance(goal4.getSecPackage());
           s.setCarry2(false);
           s.setPackage2Location(goal4.getSecPackage());
           s.setPackage1Location(goal4.getfirstPackage());
@@ -561,8 +588,11 @@ public class Problem2 {
         if(s.getCarry1() == true && s.getCarry2() == true  && s.getVehicle1().compare(s.getSecPackage()) && s.getVehicle2().compare(s.getfirstPackage())){
           System.out.println("2!!");
             s.setVehicle1Location(goal4.getfirstPackage());
+            s.getVehicle1().addtoDistance(goal4.getfirstPackage());
             s.setCarry1(false);
             s.setVehicle2Location(goal4.getSecPackage());
+            s.getVehicle2().addtoDistance(goal4.getSecPackage());
+            
             s.setCarry2(false);
             s.setPackage1Location(goal4.getfirstPackage());
             s.setPackage2Location(goal4.getSecPackage());
@@ -572,7 +602,9 @@ public class Problem2 {
         if(s.getCarry1() == false && s.getCarry2() == false && s.getfirstPackage().compare(goal4.getfirstPackage()) && s.getSecPackage().compare(goal4.getSecPackage())){
             System.out.println("Here");
             s.setVehicle1Location(goal4.getVehicle1());
-            s.setVehicle2Location(goal4.getVehicle1());
+            s.getVehicle1().addtoDistance(goal4.getVehicle1());
+            s.setVehicle2Location(goal4.getVehicle2());
+            s.getVehicle2().addtoDistance(goal4.getVehicle2());
             state4List.add(s);
             System.out.println(s);
         }

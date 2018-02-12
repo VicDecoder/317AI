@@ -13,13 +13,13 @@ public class Location {
 
     float x;
     float y;
-    float distance;
-    float time;
+    float distanceTravelled;
 
 
     public Location(){
         x =0;
         y =0;
+        distanceTravelled=0;
     }
 
     public float getX() {
@@ -49,6 +49,18 @@ public class Location {
         }
         return false;
     }
+    public void addtoDistance(Location l){
+         System.out.println("The x :"+this.x+"The l.getx:"+l.getX());
+         float tmp=((l.getX()-x)*(l.getX()-x))+((l.getY()-y)*(l.getY()-y));
+         
+         tmp = (float)Math.sqrt(tmp);
+         distanceTravelled=distanceTravelled+ tmp;
+         System.out.println("the distance tarvelled is :"+distanceTravelled);
+     }
+    public float getTravelled(){
+         return distanceTravelled;
+     }
+     
 
     public float[] getLocation(){
         float[] tmp=new float[2];
